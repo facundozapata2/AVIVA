@@ -1,10 +1,10 @@
 
   /* ============ TOKENS ============ */
   :root{
-    --rojo: #950E12;
+    --rojo: #940d11;
     --rojo-deep: #690A0D;
     --rojo-bright: #B01318;
-    --crema: #FAE8D2;
+    --crema: #F7e5cf;
     --crema-soft: #F0D9BB;
     --crema-dim: #E8CBA8;
 
@@ -325,3 +325,16 @@
     .taller-block{ display:grid; grid-template-columns: 1fr 2fr auto; gap: 1.5rem; align-items:start; padding: 2rem 0; }
     .taller-block p{ margin: 0; }
   }
+
+  .loader-logo {
+  width: min(70vw, 320px);
+  height: auto;
+  display: block;
+}
+
+.hero-logo {
+  display: block;
+  width: min(85vw, 600px);
+  height: auto;
+  margin: 0 auto;
+}
