@@ -247,10 +247,10 @@
   .counter-label{ font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.14em; margin-top: 0.4rem; display:block; }
 
   /* ============ CRONOGRAMA ============ */
-  .schedule-item{ padding: 1.1rem 0; border-bottom: 1px solid var(--crema-soft); display:flex; gap: 1.1rem; align-items:baseline; }
+  .schedule-item{ padding: 1.1rem 0; border-bottom: 1px solid var(--crema-soft); display:flex; gap: 1.1rem; align-items:center; }
   .schedule-item:last-child{ border-bottom:none; }
   .schedule-time{ font-family: var(--display); font-size: clamp(1.6rem, 7vw, 2.1rem); min-width: 4.6ch; }
-  .schedule-name{ font-family: var(--body); font-weight:700; letter-spacing: 0.02em; text-transform: uppercase; font-size: 0.95rem; }
+  .schedule-name{ font-family: var(--body); font-weight: 700; text-transform: uppercase; font-size: 0.95rem; }
 
   /* ============ TRIBUS ============ */
   .tribus-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.6rem; }
