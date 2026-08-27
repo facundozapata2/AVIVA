@@ -8,7 +8,7 @@
 (function () {
 
   // FECHA PLACEHOLDER — reemplazar por la fecha/hora real de inicio.
-  var TARGET_DATE = new Date('2026-09-04T18git:00:00-03:00').getTime();
+  var TARGET_DATE = new Date('2026-09-04T18:00:00-03:00').getTime();
 
   var elDays = document.getElementById('cd-days');
   var elHours = document.getElementById('cd-hours');
