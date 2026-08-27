@@ -8,8 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,700;0,900;1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/main.css">
-<link rel="icon" type="image/png" href="assets/css/var.css">
+<link rel="stylesheet" href="./assets/css/main.css">
 </head>
 <body>
 
@@ -194,140 +193,9 @@
   <p>CAMPAMENTO DE INVIERNO · 2026 — MOCKUP V1</p>
 </footer>
 
-<script>
-(function(){
-  // ---------- LOADER ----------
-  window.addEventListener('load', function(){
-    setTimeout(function(){
-      document.getElementById('loader').classList.add('hide');
-    }, 900);
-  });
-
-  // ---------- NAV: fixed bar after hero ----------
-  var hero = document.getElementById('hero');
-  var navbar = document.getElementById('navbar');
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(!e.isIntersecting){ navbar.classList.add('show'); }
-      else { navbar.classList.remove('show'); }
-    });
-  }, { threshold: 0.05 });
-  io.observe(hero);
-
-  // ---------- NAV: open / close overlay ----------
-  var hamburger = document.getElementById('hamburger');
-  var closeBtn = document.getElementById('hamburger-close');
-  var overlay = document.getElementById('nav-overlay');
-
-  function openNav(){
-    document.body.classList.add('nav-open');
-    hamburger.setAttribute('aria-expanded', 'true');
-    overlay.setAttribute('aria-hidden', 'false');
-  }
-  function closeNav(){
-    document.body.classList.remove('nav-open');
-    hamburger.setAttribute('aria-expanded', 'false');
-    overlay.setAttribute('aria-hidden', 'true');
-  }
-  hamburger.addEventListener('click', function(){
-    document.body.classList.contains('nav-open') ? closeNav() : openNav();
-  });
-  closeBtn.addEventListener('click', closeNav);
-  document.querySelectorAll('.nav-link').forEach(function(link){
-    link.addEventListener('click', closeNav);
-  });
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape') closeNav();
-  });
-
-  // ---------- SCROLL REVEAL ----------
-  var revealEls = document.querySelectorAll('.reveal');
-  var revealIO = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){ e.target.classList.add('in'); revealIO.unobserve(e.target); }
-    });
-  }, { threshold: 0.15 });
-  revealEls.forEach(function(el){ revealIO.observe(el); });
-
-  // ---------- COUNTDOWN ----------
-  // FECHA PLACEHOLDER — reemplazar por la fecha/hora real de inicio del campamento.
-  var TARGET_DATE = new Date('2027-07-16T09:00:00-03:00').getTime();
-
-  var elDays = document.getElementById('cd-days');
-  var elHours = document.getElementById('cd-hours');
-  var elMins = document.getElementById('cd-mins');
-  var elSecs = document.getElementById('cd-secs');
-
-  function pad(n){ return String(n).padStart(2,'0'); }
-
-  function tickCountdown(){
-    var now = Date.now();
-    var diff = TARGET_DATE - now;
-    if(diff <= 0){
-      elDays.textContent = '00'; elHours.textContent = '00'; elMins.textContent = '00'; elSecs.textContent = '00';
-      clearInterval(countdownTimer);
-      return;
-    }
-    var d = Math.floor(diff / 86400000);
-    var h = Math.floor((diff % 86400000) / 3600000);
-    var m = Math.floor((diff % 3600000) / 60000);
-    var s = Math.floor((diff % 60000) / 1000);
-    elDays.textContent = pad(d); elHours.textContent = pad(h); elMins.textContent = pad(m); elSecs.textContent = pad(s);
-  }
-  tickCountdown();
-  var countdownTimer = setInterval(tickCountdown, 1000);
-
-  // ---------- CLASIFICACIÓN (dynamic ranking demo, FLIP animation) ----------
-  var clasifData = [
-    { name: 'Tribu A', pts: 125 },
-    { name: 'Tribu B', pts: 110 },
-    { name: 'Tribu C', pts: 98 },
-    { name: 'Tribu D', pts: 85 }
-  ];
-  var clasifList = document.getElementById('clasif-list');
-
-  function renderClasif(){
-    var sorted = clasifData.slice().sort(function(a,b){ return b.pts - a.pts; });
-    clasifList.innerHTML = '';
-    sorted.forEach(function(team, i){
-      var li = document.createElement('li');
-      li.className = 'clasif-row';
-      li.dataset.name = team.name;
-      li.innerHTML =
-        '<span class="clasif-pos">' + String(i+1).padStart(2,'0') + '</span>' +
-        '<span class="clasif-name">' + team.name + '</span>' +
-        '<span class="clasif-pts">' + team.pts + ' pts</span>';
-      clasifList.appendChild(li);
-    });
-  }
-  renderClasif();
-
-  document.getElementById('clasif-btn').addEventListener('click', function(){
-    var rows = Array.prototype.slice.call(clasifList.querySelectorAll('.clasif-row'));
-    var firstRects = {};
-    rows.forEach(function(r){ firstRects[r.dataset.name] = r.getBoundingClientRect(); });
-
-    // randomize points slightly to simulate a live update
-    clasifData.forEach(function(t){ t.pts = Math.max(0, t.pts + (Math.floor(Math.random()*23) - 11)); });
-    renderClasif();
-
-    var newRows = Array.prototype.slice.call(clasifList.querySelectorAll('.clasif-row'));
-    newRows.forEach(function(r){
-      var first = firstRects[r.dataset.name];
-      var last = r.getBoundingClientRect();
-      var deltaY = first.top - last.top;
-      if(deltaY){
-        r.style.transform = 'translateY(' + deltaY + 'px)';
-        r.style.transition = 'none';
-        requestAnimationFrame(function(){
-          r.style.transition = 'transform .5s cubic-bezier(.3,.8,.3,1)';
-          r.style.transform = 'translateY(0)';
-        });
-      }
-    });
-  });
-})();
-</script>
-
+<script src="./assets/js/loader.js" defer></script>
+<script src="./assets/js/navbar.js" defer></script>
+<script src="./assets/js/countdown.js" defer></script>
+<script src="./assets/js/ranking.js" defer></script>
 </body>
 </html>
