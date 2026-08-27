@@ -1,4 +1,4 @@
-const tribus = ['NEFTALÍ', 'JUDÁ', 'MANASÉS', 'BENJAMÍN'];
+const API_URL = 'https://script.google.com/macros/s/AKfycbxPIY_mK71CaRRPHKh0BopxaDWwJ7KGQMdu454Q17E5zCrbED6T2OsoF7WOAneiFmgb4w/exec';
 
 (function () {
 
@@ -7,10 +7,7 @@ const tribus = ['NEFTALÍ', 'JUDÁ', 'MANASÉS', 'BENJAMÍN'];
 
   if (!clasifList) return;
 
-  const clasifData = tribus.map((tribu, index) => ({
-    name: `Tribu ${tribu}`,
-    pts: [125, 110, 98, 85][index]
-  }));
+  let clasifData = [];
 
   function renderClasif() {
     const sorted = [...clasifData].sort((a, b) => b.pts - a.pts);
@@ -55,7 +52,8 @@ const tribus = ['NEFTALÍ', 'JUDÁ', 'MANASÉS', 'BENJAMÍN'];
     });
   }
 
-  function updateClasif(mutateFn) {
+  async function cargarClasificacion() {
+
     const rows = [...clasifList.querySelectorAll('.clasif-row')];
     const beforeRects = {};
 
@@ -63,24 +61,35 @@ const tribus = ['NEFTALÍ', 'JUDÁ', 'MANASÉS', 'BENJAMÍN'];
       beforeRects[row.dataset.name] = row.getBoundingClientRect();
     });
 
-    mutateFn();
-    renderClasif();
-    animateReorder(beforeRects);
+    try {
+      const response = await fetch(API_URL);
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      clasifData = data.map(team => ({
+        name: `Tribu ${team.tribu}`,
+        pts: Number(team.puntos) || 0
+      }));
+
+      renderClasif();
+      animateReorder(beforeRects);
+
+    } catch (error) {
+      console.error('Error cargando la clasificación:', error);
+
+      clasifList.innerHTML =
+        '<li class="clasif-error">No se pudo cargar la clasificación.</li>';
+    }
   }
 
-  renderClasif();
+  cargarClasificacion();
 
   if (clasifBtn) {
-    clasifBtn.addEventListener('click', () => {
-      updateClasif(() => {
-        clasifData.forEach(team => {
-          team.pts = Math.max(
-            0,
-            team.pts + (Math.floor(Math.random() * 23) - 11)
-          );
-        });
-      });
-    });
+    clasifBtn.addEventListener('click', cargarClasificacion);
   }
 
 })();
