@@ -254,11 +254,16 @@
 
   /* ============ TRIBUS ============ */
   .tribus-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.6rem; }
-  .tribu-card{ border: var(--edge) solid var(--rojo); padding: 1rem; text-align:center; }
+  .tribu-card{
+     border: var(--edge) solid var(--rojo); 
+     padding: 1rem; text-align:center; 
+    }
   .tribu-num{ font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.2em; }
   .tribu-logo{
     margin: 0.8rem auto 0.6rem; width: 64px; height: 64px;
-    border: 2px dashed var(--rojo); display:flex; align-items:center; justify-content:center;
+     display:flex;
+      align-items:center;
+       justify-content:center;
     font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.05em; opacity:.7;
   }
   .tribu-name{ font-family: var(--display); font-size: 0.95rem; letter-spacing: 0.03em; opacity: .6; }
@@ -337,4 +342,23 @@
   width: min(85vw, 600px);
   height: auto;
   margin: 0 auto;
+}
+
+/* */
+.tribu-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 220px;
+  margin: 1rem 0;
+  overflow: hidden;
+}
+
+.tribu-logo img {
+  display: block;
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  object-fit: contain;
 }

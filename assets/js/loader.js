@@ -6,7 +6,7 @@
 (function () {
   window.addEventListener('load', function () {
     setTimeout(function () {
-      var loader = document.getElementById('loader');
+      let loader = document.getElementById('loader');
       if (loader) loader.classList.add('hide');
     }, 900);
   });

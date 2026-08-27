@@ -9,15 +9,17 @@
      #hero, #navbar, #hamburger, #hamburger-close, #nav-overlay,
      enlaces con clase .nav-link, y elementos con clase .reveal.
    ============================================================ */
-(function () {
+
+(() => {
 
   /* ---------- 1) Navbar fijo tras el hero ---------- */
-  var hero = document.getElementById('hero');
-  var navbar = document.getElementById('navbar');
+
+  const hero = document.getElementById('hero');
+  const navbar = document.getElementById('navbar');
 
   if (hero && navbar) {
-    var navIO = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
+    const navIO = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
         if (!entry.isIntersecting) {
           navbar.classList.add('show');
         } else {
@@ -30,25 +32,40 @@
   }
 
   /* ---------- 2) Menú hamburguesa ---------- */
-  var hamburger = document.getElementById('hamburger');
-  var closeBtn = document.getElementById('hamburger-close');
-  var overlay = document.getElementById('nav-overlay');
 
-  function openNav() {
+  const hamburger = document.getElementById('hamburger');
+  const closeBtn = document.getElementById('hamburger-close');
+  const overlay = document.getElementById('nav-overlay');
+
+  const openNav = () => {
     document.body.classList.add('nav-open');
-    if (hamburger) hamburger.setAttribute('aria-expanded', 'true');
-    if (overlay) overlay.setAttribute('aria-hidden', 'false');
-  }
 
-  function closeNav() {
+    if (hamburger) {
+      hamburger.setAttribute('aria-expanded', 'true');
+    }
+
+    if (overlay) {
+      overlay.setAttribute('aria-hidden', 'false');
+    }
+  };
+
+  const closeNav = () => {
     document.body.classList.remove('nav-open');
-    if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
-    if (overlay) overlay.setAttribute('aria-hidden', 'true');
-  }
+
+    if (hamburger) {
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+
+    if (overlay) {
+      overlay.setAttribute('aria-hidden', 'true');
+    }
+  };
 
   if (hamburger) {
-    hamburger.addEventListener('click', function () {
-      document.body.classList.contains('nav-open') ? closeNav() : openNav();
+    hamburger.addEventListener('click', () => {
+      document.body.classList.contains('nav-open')
+        ? closeNav()
+        : openNav();
     });
   }
 
@@ -56,20 +73,23 @@
     closeBtn.addEventListener('click', closeNav);
   }
 
-  document.querySelectorAll('.nav-link').forEach(function (link) {
+  document.querySelectorAll('.nav-link').forEach((link) => {
     link.addEventListener('click', closeNav);
   });
 
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeNav();
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeNav();
+    }
   });
 
   /* ---------- 3) Scroll-reveal de secciones ---------- */
-  var revealEls = document.querySelectorAll('.reveal');
+
+  const revealEls = document.querySelectorAll('.reveal');
 
   if (revealEls.length) {
-    var revealIO = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
+    const revealIO = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('in');
           revealIO.unobserve(entry.target);
@@ -77,7 +97,7 @@
       });
     }, { threshold: 0.15 });
 
-    revealEls.forEach(function (el) {
+    revealEls.forEach((el) => {
       revealIO.observe(el);
     });
   }
