@@ -124,11 +124,13 @@
   #nav-links li a:hover, #nav-links li a:focus-visible{ border-color: var(--crema); }
   #nav-links li{ counter-increment: navnum; position:relative; }
   #nav-links{ counter-reset: navnum; }
+  /*
   #nav-links li a::before{
     content: counter(navnum, decimal-leading-zero);
     font-family: var(--mono); font-size: 0.9rem; vertical-align: super;
     margin-right: 0.5em; opacity: .7;
-  }
+  }<
+  */
   #nav-overlay footer{ font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.15em; opacity:.75; }
 
   /* ============ HERO ============ */
