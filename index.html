@@ -111,166 +111,86 @@ Levítico 6:13.</div>
     <span class="eyebrow">El orden del fuego</span>
     <h2>Cronograma</h2>
     <div class="divider"></div>
-
-    <div class="schedule-days">
-
-      <!-- VIERNES -->
-      <div class="schedule-day">
-        <div class="schedule-day-header">
-          <h3>V I E R N E S</h3>
-        </div>
-
-        <div class="schedule-list">
-          <div class="schedule-item">
-            <span class="schedule-time">18:00</span>
-            <span class="schedule-name">MICRO IDR</span>
-          </div>
-
-          <div class="schedule-item">
-            <span class="schedule-time">20:00</span>
-            <span class="schedule-name">BIENVENIDA</span>
-          </div>
-
-          <div class="schedule-item">
-            <span class="schedule-time">21:00</span>
-            <span class="schedule-name">CENA COMPARTIDA</span>
-          </div>
-
-          <div class="schedule-item">
-            <span class="schedule-time">22:00</span>
-            <span class="schedule-name">TRIBUS <small>— El desafío</small></span>
-          </div>
-
-          <div class="schedule-item">
-            <span class="schedule-time">23:00</span>
-            <span class="schedule-name">ALTARES <small>— "El fuego consumidor"</small></span>
-          </div>
-
-          <div class="schedule-item">
-            <span class="schedule-time">00:00</span>
-            <span class="schedule-name">FOGÓN</span>
+ 
+    <div class="crono-accordion" id="crono-accordion">
+ 
+      <div class="crono-day">
+        <h3 class="crono-day-heading">
+          <button type="button" class="crono-day-toggle" id="crono-toggle-viernes" aria-expanded="false" aria-controls="crono-panel-viernes">
+            <span class="crono-day-num">01</span>
+            <span class="crono-day-name">Viernes</span>
+            <span class="crono-day-icon" aria-hidden="true">+</span>
+          </button>
+        </h3>
+        <div class="crono-day-panel" id="crono-panel-viernes" role="region" aria-labelledby="crono-toggle-viernes" aria-hidden="true">
+          <div class="crono-day-panel-inner">
+            <div class="schedule-list">
+              <div class="schedule-item"><span class="schedule-time">18:00</span><span class="schedule-name">Micro IDR</span></div>
+              <div class="schedule-item"><span class="schedule-time">20:00</span><span class="schedule-name">Bienvenida</span></div>
+              <div class="schedule-item"><span class="schedule-time">21:00</span><span class="schedule-name">Cena compartida</span></div>
+              <div class="schedule-item"><span class="schedule-time">22:00</span><span class="schedule-name">Tribus — El desafío</span></div>
+              <div class="schedule-item"><span class="schedule-time">23:00</span><span class="schedule-name">Altares — <span class="schedule-quote">"El fuego consumidor"</span></span></div>
+              <div class="schedule-item"><span class="schedule-time">00:00</span><span class="schedule-name">Fogón</span></div>
+            </div>
           </div>
         </div>
       </div>
-
-      <!-- SÁBADO -->
-      <div class="schedule-day">
-        <div class="schedule-day-header">
-          <h3>S Á B A D O</h3>
-        </div>
-
-        <div class="schedule-list">
-          <div class="schedule-item">
-            <span class="schedule-time">08:30</span>
-            <span class="schedule-name">BUEN DÍA</span>
-          </div>
-
-          <div class="schedule-item">
-            <span class="schedule-time">09:00</span>
-            <span class="schedule-name">DESAYUNO</span>
-          </div>
-
-          <div class="schedule-item">
-            <span class="schedule-time">10:00</span>
-            <span class="schedule-name">DEVO 1 <small>— "..."</small></span>
-          </div>
-
-          <div class="schedule-item">
-            <span class="schedule-time">13:00</span>
-            <span class="schedule-name">ALMUERZO <small>— SAND. BONDIOLA</small></span>
-          </div>
-
-          <div class="schedule-item">
-            <span class="schedule-time">14:30</span>
-            <span class="schedule-name">TALLERES: Devoción, Dones y Evangelismo</span>
-          </div>
-
-          <div class="schedule-item">
-            <span class="schedule-time">16:30</span>
-            <span class="schedule-name">JUEGOS DEL HAMBRE</span>
-          </div>
-
-          <div class="schedule-item">
-            <span class="schedule-time">19:00</span>
-            <span class="schedule-name">MERIENDA</span>
-          </div>
-
-          <div class="schedule-item">
-            <span class="schedule-time">21:00</span>
-            <span class="schedule-name">CENA <small>— PIZZA</small></span>
-          </div>
-
-          <div class="schedule-item">
-            <span class="schedule-time">22:00</span>
-            <span class="schedule-name">ALTARES <small>— "..."</small></span>
-          </div>
-
-          <div class="schedule-item">
-            <span class="schedule-time">00:00</span>
-            <span class="schedule-name">CINE</span>
+ 
+      <div class="crono-day">
+        <h3 class="crono-day-heading">
+          <button type="button" class="crono-day-toggle" id="crono-toggle-sabado" aria-expanded="false" aria-controls="crono-panel-sabado">
+            <span class="crono-day-num">02</span>
+            <span class="crono-day-name">Sábado</span>
+            <span class="crono-day-icon" aria-hidden="true">+</span>
+          </button>
+        </h3>
+        <div class="crono-day-panel" id="crono-panel-sabado" role="region" aria-labelledby="crono-toggle-sabado" aria-hidden="true">
+          <div class="crono-day-panel-inner">
+            <div class="schedule-list">
+              <div class="schedule-item"><span class="schedule-time">08:30</span><span class="schedule-name">Buen día</span></div>
+              <div class="schedule-item"><span class="schedule-time">09:00</span><span class="schedule-name">Desayuno</span></div>
+              <div class="schedule-item"><span class="schedule-time">10:00</span><span class="schedule-name">Devo 1 — <span class="schedule-quote">"..."</span></span></div>
+              <div class="schedule-item"><span class="schedule-time">13:00</span><span class="schedule-name">Almuerzo — Sand. bondiola</span></div>
+              <div class="schedule-item"><span class="schedule-time">14:30</span><span class="schedule-name">Talleres: Devoción, Dones y Evangelismo</span></div>
+              <div class="schedule-item"><span class="schedule-time">16:30</span><span class="schedule-name">Juegos del hambre</span></div>
+              <div class="schedule-item"><span class="schedule-time">19:00</span><span class="schedule-name">Merienda</span></div>
+              <div class="schedule-item"><span class="schedule-time">21:00</span><span class="schedule-name">Cena — Pizza</span></div>
+              <div class="schedule-item"><span class="schedule-time">22:00</span><span class="schedule-name">Altares — <span class="schedule-quote">"..."</span></span></div>
+              <div class="schedule-item"><span class="schedule-time">00:00</span><span class="schedule-name">Cine</span></div>
+            </div>
           </div>
         </div>
       </div>
-
-      <!-- DOMINGO -->
-      <div class="schedule-day">
-        <div class="schedule-day-header">
-          <h3>D O M I N G O</h3>
-        </div>
-
-        <div class="schedule-list">
-          <div class="schedule-item">
-            <span class="schedule-time">08:30</span>
-            <span class="schedule-name">BUEN DÍA</span>
-          </div>
-
-          <div class="schedule-item">
-            <span class="schedule-time">09:00</span>
-            <span class="schedule-name">DESAYUNO</span>
-          </div>
-
-          <div class="schedule-item">
-            <span class="schedule-time">10:00</span>
-            <span class="schedule-name">DEVO 2 <small>— "El fuego no se apagará"</small></span>
-          </div>
-
-          <div class="schedule-item">
-            <span class="schedule-time">12:00</span>
-            <span class="schedule-name">CORONACIÓN: Tribus</span>
-          </div>
-
-          <div class="schedule-item">
-            <span class="schedule-time">13:00</span>
-            <span class="schedule-name">ALMUERZO <small>— PASTAS</small></span>
-          </div>
-
-          <div class="schedule-item">
-            <span class="schedule-time">15:00</span>
-            <span class="schedule-name">REFLEXIONES</span>
-          </div>
-
-          <div class="schedule-item">
-            <span class="schedule-time">16:00</span>
-            <span class="schedule-name">CIERRE <small>— ALTARES</small></span>
-          </div>
-
-          <div class="schedule-item">
-            <span class="schedule-time">17:00</span>
-            <span class="schedule-name">VUELTA IDR</span>
-          </div>
-
-          <div class="schedule-item">
-            <span class="schedule-time">18:00</span>
-            <span class="schedule-name">REUNIÓN IDR</span>
+ 
+      <div class="crono-day">
+        <h3 class="crono-day-heading">
+          <button type="button" class="crono-day-toggle" id="crono-toggle-domingo" aria-expanded="false" aria-controls="crono-panel-domingo">
+            <span class="crono-day-num">03</span>
+            <span class="crono-day-name">Domingo</span>
+            <span class="crono-day-icon" aria-hidden="true">+</span>
+          </button>
+        </h3>
+        <div class="crono-day-panel" id="crono-panel-domingo" role="region" aria-labelledby="crono-toggle-domingo" aria-hidden="true">
+          <div class="crono-day-panel-inner">
+            <div class="schedule-list">
+              <div class="schedule-item"><span class="schedule-time">08:30</span><span class="schedule-name">Buen día</span></div>
+              <div class="schedule-item"><span class="schedule-time">09:00</span><span class="schedule-name">Desayuno</span></div>
+              <div class="schedule-item"><span class="schedule-time">10:00</span><span class="schedule-name">Devo 2 — <span class="schedule-quote">"El fuego no se apagará"</span></span></div>
+              <div class="schedule-item"><span class="schedule-time">12:00</span><span class="schedule-name">Coronación: Tribus</span></div>
+              <div class="schedule-item"><span class="schedule-time">13:00</span><span class="schedule-name">Almuerzo — Pastas</span></div>
+              <div class="schedule-item"><span class="schedule-time">15:00</span><span class="schedule-name">Reflexiones</span></div>
+              <div class="schedule-item"><span class="schedule-time">16:00</span><span class="schedule-name">Cierre — Altares</span></div>
+              <div class="schedule-item"><span class="schedule-time">17:00</span><span class="schedule-name">Vuelta IDR</span></div>
+              <div class="schedule-item"><span class="schedule-time">18:00</span><span class="schedule-name">Reunión IDR</span></div>
+            </div>
           </div>
         </div>
       </div>
-
+ 
     </div>
   </div>
 </section>
 
-<!-- TRIBUS -->
 <!-- TRIBUS -->
 <section id="tribus" class="section-cream">
   <div class="container reveal">
@@ -321,26 +241,7 @@ Levítico 6:13.</div>
     <ul id="clasif-list"></ul>
   </div>
 </section>
-<!--
-<section id="tribus" class="section-cream">
-  <div class="container reveal">
-    <span class="eyebrow">El desafío</span>
-    <h2>Tribus</h2>
-    <div class="tribus-grid">
-      <div class="tribu-card"><span class="tribu-num">Tribu 01</span><div class="tribu-logo">LOGO<br>PRÓX.</div><div class="tribu-name">A definir</div></div>
-      <div class="tribu-card"><span class="tribu-num">Tribu 02</span><div class="tribu-logo">LOGO<br>PRÓX.</div><div class="tribu-name">A definir</div></div>
-      <div class="tribu-card"><span class="tribu-num">Tribu 03</span><div class="tribu-logo">LOGO<br>PRÓX.</div><div class="tribu-name">A definir</div></div>
-      <div class="tribu-card"><span class="tribu-num">Tribu 04</span><div class="tribu-logo">LOGO<br>PRÓX.</div><div class="tribu-name">A definir</div></div>
-    </div>
 
-    <div class="clasif-head">
-      <h3 style="font-size:1.2rem;">Clasificación</h3>
-      <button class="clasif-refresh" id="clasif-btn">Actualizar (demo)</button>
-    </div>
-    <ul id="clasif-list"></ul>
-  </div>
-</section>
--->
 <!-- TALLERES -->
 <section id="talleres" class="section-red">
   <div class="container reveal">
@@ -400,5 +301,6 @@ Levítico 6:13.</div>
 <script src="./assets/js/navbar.js" defer></script>
 <script src="./assets/js/countdown.js" defer></script>
 <script src="./assets/js/ranking.js" defer></script>
+<script src="./assets/js/cronograma.js" defer></script>
 </body>
 </html>

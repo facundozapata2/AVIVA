@@ -249,11 +249,121 @@
   .counter-label{ font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.14em; margin-top: 0.4rem; display:block; }
 
   /* ============ CRONOGRAMA ============ */
-  .schedule-item{ padding: 1.1rem 0; border-bottom: 1px solid var(--crema-soft); display:flex; gap: 1.1rem; align-items:center; }
+/*  .schedule-item{ padding: 1.1rem 0; border-bottom: 1px solid var(--crema-soft); display:flex; gap: 1.1rem; align-items:center; }
   .schedule-item:last-child{ border-bottom:none; }
   .schedule-time{ font-family: var(--display); font-size: clamp(1.6rem, 7vw, 2.1rem); min-width: 4.6ch; }
   .schedule-name{ font-family: var(--body); font-weight: 700; text-transform: uppercase; font-size: 0.95rem; }
+*/
+/* ============ CRONOGRAMA ============ */
 
+.crono-accordion{
+  margin-top: 1rem;
+  border-top: var(--edge) solid var(--crema);
+}
+
+.crono-day{
+  border-bottom: var(--edge) solid var(--crema);
+}
+
+.crono-day-heading{
+  margin: 0;
+}
+
+.crono-day-toggle{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 1.15rem 0;
+  font-family: var(--display);
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.crono-day-num{
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  opacity: .7;
+  min-width: 2ch;
+}
+
+.crono-day-name{
+  flex: 1;
+  font-size: clamp(1.5rem, 6.6vw, 2.1rem);
+  letter-spacing: 0.01em;
+}
+
+.crono-day-icon{
+  font-family: var(--mono);
+  font-size: 1.5rem;
+  line-height: 1;
+  width: 1.2em;
+  text-align: center;
+  flex-shrink: 0;
+  transition: transform .3s ease;
+}
+
+.crono-day-toggle[aria-expanded="true"] .crono-day-icon{
+  transform: rotate(45deg);
+}
+
+.crono-day-panel{
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .35s ease;
+}
+
+.crono-day-panel[aria-hidden="false"]{
+  grid-template-rows: 1fr;
+}
+
+.crono-day-panel-inner{
+  overflow: hidden;
+  min-height: 0;
+}
+
+.schedule-list{
+  padding: 0.2rem 0 1.3rem;
+}
+
+.schedule-item{
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--crema-soft);
+  display: flex;
+  gap: 1.1rem;
+  align-items: baseline;
+}
+
+.schedule-item:last-child{
+  border-bottom: none;
+}
+
+.schedule-time{
+  font-family: var(--display);
+  font-size: clamp(1.6rem, 7vw, 2.1rem);
+  min-width: 4.6ch;
+}
+
+.schedule-name{
+  font-family: var(--body);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+}
+
+.schedule-name small{
+  text-transform: none;
+  font-family: var(--mono);
+  font-weight: 400;
+  opacity: .65;
+  font-size: 0.85em;
+}
   /* ============ TRIBUS ============ */
   .tribus-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.6rem; }
   .tribu-card{
