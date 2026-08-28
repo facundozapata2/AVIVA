@@ -284,14 +284,6 @@
   text-align: left;
 }
 
-.crono-day-num{
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.16em;
-  opacity: .7;
-  min-width: 2ch;
-}
-
 .crono-day-name{
   flex: 1;
   font-size: clamp(1.5rem, 6.6vw, 2.1rem);
@@ -411,12 +403,22 @@
   .taller-link:hover{ opacity: .75; }
 
   /* ============ KIOSCO ============ */
-  .kiosco-row{ display:flex; justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid var(--crema-dim); font-size: 0.92rem; }
+/*  .kiosco-row{ display:flex; justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid var(--crema-dim); font-size: 0.92rem; }
   .kiosco-row:last-child{ border-bottom:none; }
   .kiosco-label{ font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; }
   .kiosco-price{ font-family: var(--mono); }
   .kiosco-hours{ font-family: var(--mono); font-size: 0.85rem; margin-top: 0.6rem; }
-
+*/
+  .kiosco-coming{
+  margin-top: 2rem;
+  padding: 2rem 0;
+  border-top: var(--edge) solid var(--rojo);
+  border-bottom: var(--edge) solid var(--rojo);
+  font-family: var(--display);
+  font-size: clamp(2rem, 9vw, 3.4rem);
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+}
   /* ============ NORMAS ============ */
   .norma-row{ display:flex; gap: 1.1rem; padding: 1.3rem 0; border-bottom: 1px solid var(--crema-soft); align-items:flex-start; }
   .norma-row:last-child{ border-bottom:none; }
