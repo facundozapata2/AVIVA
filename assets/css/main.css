@@ -362,15 +362,15 @@
      border: var(--edge) solid var(--rojo); 
      padding: 1rem; text-align:center; 
     }
-  .tribu-num{ font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.2em; }
+  .tribu-num{ font-family: var(--mono); font-size: .8rem; letter-spacing: .2em; }
   .tribu-logo{
     margin: 0.8rem auto 0.6rem; width: 64px; height: 64px;
      display:flex;
       align-items:center;
        justify-content:center;
-    font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.05em; opacity:.7;
+    font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.05em; 
   }
-  .tribu-name{ font-family: var(--display); font-size: 0.95rem; letter-spacing: 0.03em; opacity: .6; }
+  .tribu-name{ font-family: var(--display); font-size: 0.95rem; letter-spacing: 0.03em; opacity: .8; }
 
   .clasif-head{ display:flex; align-items:baseline; justify-content:space-between; margin-top: 3rem; }
   .clasif-refresh{
