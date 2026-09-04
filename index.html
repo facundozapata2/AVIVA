@@ -289,6 +289,31 @@ Que sus planes sean los nuestros.</p>
   </div>
 </section>
 
+<iframe
+  name="aviva-inscripcion-frame"
+  id="aviva-inscripcion-frame"
+  style="display:none;">
+</iframe>
+
+<form
+  id="form-inscripcion"
+   action="https://script.google.com/macros/s/AKfycby45jCs6TP0tICWt439Iv-uBLtGoM7CZmmYsDLZ9Gejsl2koOewU1bgQJMpRo5TFthPkQ/exec?action=inscripciones"
+  method="POST"
+  target="aviva-inscripcion-frame">
+
+  <input type="text" name="nombre" placeholder="Nombre" required>
+  <input type="text" name="apellido" placeholder="Apellido" required>
+
+  <select name="taller" required>
+    <option value="">Elegí un taller</option>
+    <option value="Devoción">Devoción</option>
+    <option value="Dones">Dones</option>
+    <option value="Evangelismo">Evangelismo</option>
+  </select>
+
+  <button type="submit">INSCRIBIRME</button>
+</form>
+
 <footer class="site-footer">
   <div class="brand">AVIVA</div>
   <p>CAMPAMENTO DE INVIERNO · 2026</p>
@@ -299,5 +324,10 @@ Que sus planes sean los nuestros.</p>
 <script src="./assets/js/countdown.js" defer></script>
 <script src="./assets/js/ranking.js" defer></script>
 <script src="./assets/js/cronograma.js" defer></script>
+<script>
+  window.addEventListener('message', function (event) {
+  console.log('MENSAJE RECIBIDO:', event.data);
+});
+</script>
 </body>
 </html>
