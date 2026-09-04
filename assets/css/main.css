@@ -476,3 +476,203 @@
   height: auto;
   object-fit: contain;
 }
+
+/* ============ INSCRIPCIONES / TALLERES ============ */
+
+.taller-action{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+
+.taller-cupos{
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: .75;
+}
+
+.taller-cupos.full{
+  opacity: 1;
+  font-weight: 700;
+}
+
+.taller-button{
+  appearance: none;
+  background: none;
+  color: inherit;
+  border: none;
+  border-bottom: 2px solid var(--crema);
+  cursor: pointer;
+  padding: 0 0 0.2em;
+}
+
+.taller-button:disabled{
+  cursor: default;
+  opacity: .4;
+  border-bottom-style: dashed;
+}
+
+/* Panel de inscripción */
+
+.inscripcion-panel{
+  margin-top: 2rem;
+  padding: 1.5rem 0;
+  border-top: var(--edge) solid var(--crema);
+}
+
+.inscripcion-panel[hidden]{
+  display: none;
+}
+
+.inscripcion-header{
+  margin-bottom: 1.5rem;
+}
+
+.inscripcion-header h3{
+  font-size: clamp(1.7rem, 7vw, 2.2rem);
+}
+
+#inscripcion-form{
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+#inscripcion-form label{
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+#inscripcion-form input{
+  width: 100%;
+  border: 2px solid var(--crema);
+  background: transparent;
+  color: var(--crema);
+  padding: 0.85rem 0.8rem;
+  font-family: var(--body);
+  font-size: 1rem;
+  outline: none;
+  border-radius: 0;
+}
+
+#inscripcion-form input:focus{
+  border-color: var(--crema-soft);
+}
+
+.inscripcion-actions{
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 0.4rem;
+}
+
+.inscripcion-submit,
+.inscripcion-cancelar{
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.inscripcion-submit{
+  background: var(--crema);
+  color: var(--rojo);
+  border: 2px solid var(--crema);
+  padding: 0.85rem 1rem;
+  font-weight: 700;
+}
+
+.inscripcion-submit:hover{
+  background: var(--crema-soft);
+}
+
+.inscripcion-submit:disabled{
+  opacity: .5;
+  cursor: wait;
+}
+
+.inscripcion-cancelar{
+  background: none;
+  color: var(--crema);
+  border: none;
+  padding: 0.5rem 0;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.inscripcion-mensaje{
+  margin: 0.5rem 0 0;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+
+.inscripcion-mensaje:empty{
+  display: none;
+}
+
+.inscripcion-mensaje.ok{
+  font-weight: 700;
+}
+
+.inscripcion-mensaje.error{
+  font-weight: 700;
+}
+
+/* Escritorio */
+
+@media (min-width: 760px){
+
+  .taller-action{
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  #inscripcion-form{
+    max-width: 500px;
+  }
+
+}
+
+.inscripcion-header h3{
+  display: inline-block;
+  margin-top: 0.3rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 3px solid var(--crema);
+  font-size: clamp(1.8rem, 8vw, 2.5rem);
+}
+
+.kiosco-list{
+  margin-top: 2rem;
+}
+
+.kiosco-list h3{
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.kiosco-list h3:first-child{
+  margin-top: 0;
+}
+
+.kiosco-list p{
+  margin: 0;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--rojo);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}

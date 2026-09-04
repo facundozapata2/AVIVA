@@ -242,37 +242,177 @@ Levítico 6:13.</div>
 <!-- TALLERES -->
 <section id="talleres" class="section-red">
   <div class="container reveal">
+
     <span class="eyebrow">Para llevarte algo</span>
     <h2>Talleres</h2>
 
-    <div class="taller-block">
-      <h3>Devoción</h3>
-      <p>Que el Señor AVIVE nuestra dedicación por sus planes. TEMOR, DEVOCIÓN y AMOR por JESÚS.
-Que sus planes sean los nuestros.</p>
-      <a href="#" class="taller-link">Anotarme →</a>
+    <div id="talleres-list" class="talleres-list">
+
+      <article class="taller-block" data-taller="Devoción">
+        <div>
+          <h3>Devoción</h3>
+          <p>
+            Que el Señor AVIVE nuestra dedicación por sus planes.
+            TEMOR, DEVOCIÓN y AMOR por JESÚS.
+            Que sus planes sean los nuestros.
+          </p>
+        </div>
+
+        <div class="taller-action">
+          <span class="taller-cupos">Cargando cupos...</span>
+          <button type="button" class="taller-link taller-button">
+            Anotarme →
+          </button>
+        </div>
+      </article>
+
+      <article class="taller-block" data-taller="Dones">
+        <div>
+          <h3>Dones</h3>
+          <p>
+            Aquellos DONES y TALENTOS que Dios dispuso en nuestro interior
+            deben ser activados. Aprendamos cómo.
+          </p>
+        </div>
+
+        <div class="taller-action">
+          <span class="taller-cupos">Cargando cupos...</span>
+          <button type="button" class="taller-link taller-button">
+            Anotarme →
+          </button>
+        </div>
+      </article>
+
+      <article class="taller-block" data-taller="Evangelismo">
+        <div>
+          <h3>Evangelismo</h3>
+          <p>
+            Salir a contarlo. Practicamos cómo hablar de fe
+            en el lenguaje de quien todavía no la tiene.
+          </p>
+        </div>
+
+        <div class="taller-action">
+          <span class="taller-cupos">Cargando cupos...</span>
+          <button type="button" class="taller-link taller-button">
+            Anotarme →
+          </button>
+        </div>
+      </article>
+
     </div>
-    <div class="taller-block">
-      <h3>Dones</h3>
-      <p>Aquellos DONES y TALENTOS que Dios dispuso en nuestro interior deben ser activados. Aprendamos como.</p>
-      <a href="#" class="taller-link">Anotarme →</a>
+
+    <div id="inscripcion-panel" class="inscripcion-panel" hidden>
+
+      <div class="inscripcion-header">
+        <span class="eyebrow">Inscripción</span>
+        <h3 id="inscripcion-taller"></h3>
+      </div>
+
+      <form
+        id="inscripcion-form"
+        action="https://script.google.com/macros/s/AKfycby45jCs6TP0tICWt439Iv-uBLtGoM7CZmmYsDLZ9Gejsl2koOewU1bgQJMpRo5TFthPkQ/exec?action=inscripciones"
+        method="POST"
+        target="aviva-inscripcion-frame"
+      >
+
+        <input
+          type="hidden"
+          name="taller"
+          id="inscripcion-taller-input"
+        >
+
+        <label>
+          Nombre
+          <input
+            type="text"
+            name="nombre"
+            id="inscripcion-nombre"
+            autocomplete="given-name"
+            required
+          >
+        </label>
+
+        <label>
+          Apellido
+          <input
+            type="text"
+            name="apellido"
+            id="inscripcion-apellido"
+            autocomplete="family-name"
+            required
+          >
+        </label>
+
+        <div class="inscripcion-actions">
+          <button type="submit" class="inscripcion-submit">
+            INSCRIBIRME
+          </button>
+
+          <button
+            type="button"
+            id="inscripcion-cancelar"
+            class="inscripcion-cancelar"
+          >
+            Cancelar
+          </button>
+        </div>
+
+        <p
+          id="inscripcion-mensaje"
+          class="inscripcion-mensaje"
+          aria-live="polite"
+        ></p>
+
+      </form>
     </div>
-    <div class="taller-block">
-      <h3>Evangelismo</h3>
-      <p>Salir a contarlo. Practicamos cómo hablar de fe en el lenguaje de quien todavía no la tiene.</p>
-      <a href="#" class="taller-link">Anotarme →</a>
-    </div>
+
   </div>
 </section>
 
 <!-- KIOSCO -->
 <section id="kiosco" class="section-cream">
   <div class="container reveal">
-    <span class="eyebrow">Entre actividad y actividad</span>
+
+    <span class="eyebrow">Para cuando pinte</span>
     <h2>Kiosco</h2>
 
-    <div class="kiosco-coming">
-      PRÓXIMAMENTE...
+    <div class="kiosco-list">
+
+      <h3>Galletitas</h3>
+
+      <p>Pitusas (diferentes gustos) — $2.000</p>
+      <p>Bizcochito Don Satur (diferentes gustos) — $1.700</p>
+
+
+      <h3>Salado</h3>
+
+      <p>Papas fritas Leq (diferentes gustos) — $1.800</p>
+      <p>Papas fritas Nikitos clásicas — $900</p>
+      <p>Palitos salados — $200</p>
+
+
+      <h3>Dulce</h3>
+
+      <p>Turrón Rocklet — $500</p>
+      <p>Turrón clásico — $400</p>
+      <p>Guaymallén Rubí — $900</p>
+      <p>Guaymallén Oro — $900</p>
+      <p>Guaymallén clásico — $400</p>
+      <p>Bon o Bon — $600</p>
+      <p>Oreo BTS — $2.800</p>
+      <p>Flynn Paff — $200</p>
+      <p>Alfajor Vimar Selección — $1.200</p>
+      <p>Chocolate Cofler — $2.300</p>
+      <p>Monedas de chocolate — $1.700</p>
+      <p>Palitos de la Selva — $300</p>
+      <p>Mr. Pop Evolution — $500 c/u</p>
+      <p>Pico Dulce — $400</p>
+      <p>Gomitas Mogul (de gustos) — $800</p>
+      <p>Gomitas Mogul en barrita — $900</p>
+
     </div>
+
   </div>
 </section>
 
@@ -295,24 +435,7 @@ Que sus planes sean los nuestros.</p>
   style="display:none;">
 </iframe>
 
-<form
-  id="form-inscripcion"
-   action="https://script.google.com/macros/s/AKfycby45jCs6TP0tICWt439Iv-uBLtGoM7CZmmYsDLZ9Gejsl2koOewU1bgQJMpRo5TFthPkQ/exec?action=inscripciones"
-  method="POST"
-  target="aviva-inscripcion-frame">
 
-  <input type="text" name="nombre" placeholder="Nombre" required>
-  <input type="text" name="apellido" placeholder="Apellido" required>
-
-  <select name="taller" required>
-    <option value="">Elegí un taller</option>
-    <option value="Devoción">Devoción</option>
-    <option value="Dones">Dones</option>
-    <option value="Evangelismo">Evangelismo</option>
-  </select>
-
-  <button type="submit">INSCRIBIRME</button>
-</form>
 
 <footer class="site-footer">
   <div class="brand">AVIVA</div>
@@ -324,10 +447,6 @@ Que sus planes sean los nuestros.</p>
 <script src="./assets/js/countdown.js" defer></script>
 <script src="./assets/js/ranking.js" defer></script>
 <script src="./assets/js/cronograma.js" defer></script>
-<script>
-  window.addEventListener('message', function (event) {
-  console.log('MENSAJE RECIBIDO:', event.data);
-});
-</script>
+<script src="./assets/js/inscripciones.js"></script>
 </body>
 </html>
